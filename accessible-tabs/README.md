@@ -1,25 +1,35 @@
-# Next.js starter: Typescript, Styled-Components, Jest, Testing-Library
+# Iress coding chalenge
 
-To start a new project:
+## Pre-requisties
+Requires node 10.13 or later
 
-```bash
-npx create-next-app my-new-project --example "https://github.com/celikmus/nextjs_starter-typescript-styled_components"
-cd my-new-project
-yarn dev
-# or npm run dev
-```
+## To install
+git clone https://github.com/copewood/accessible-tabs.git
 
-## Getting Started
+cd accessible-tabs
 
-First, run the development server:
+npm install
 
-```bash
+## To run
 npm run dev
-# or
-yarn dev
-```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+## To run unit tests
+npm test
+
+## This project was bootstrapped using
+
+npx create-next-app accessible-tabs --example "https://github.com/celikmus/nextjs_starter-typescript-styled_components”
+
+## Outstanding issues / future improvements
+
+1.  Perfect the styling of the page  
+2.  Improve the tests (not just snapshots)
+3.  Fix defect when clicking on link at top of page focuses correct tab button but does not show matching tab panel
+4.  Make it more "react hooks" instead of using class and event listeners
+
+# Next.js starter: Typescript, Styled-Components, Jest, Testing-Library
 
 You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file. To see a sample component and its unit test, have a look at `components/sample`.
 

@@ -1,33 +1,39 @@
 import Head from 'next/head';
 import styled from 'styled-components';
 
+import testData from 'data/test-data.json';
+
+import { AccessibleTabs } from '@components/accessible-tabs/AccessibleTabs';
+
 export const Container = styled.div`
   min-height: 100vh;
   padding: 0 0.5rem;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   height: 100vh;
 `;
 
 export const Main = styled.div`
-  padding: 5rem 0;
+  padding: 1rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
 `;
 
 export const Title = styled.div`
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 1.5rem;
   text-align: center;
   a {
     color: #0070f3;
-    text-decoration: none;
+    text-decoration: underline;
+    margin: 1rem;
+    font-size: 1rem;
   }
 `;
 
@@ -44,8 +50,28 @@ export default function Home() {
 
       <Main>
         <Title>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Iress Accessible Tabs Coding Test
+          <div>
+            {testData.map((testItem, tabsIndex) =>  
+               testItem.tabs.map((tab, index) => 
+                <a 
+                  href={`#tablist-${tabsIndex}-tab-${index}`}
+                  key={`#tablist-${tabsIndex}-link-${index}`}
+                >
+                  {tab.name}
+                </a>
+              ))}
+          </div>
         </Title>
+        
+        {testData.map((testItem, tabsIndex) =>
+          <AccessibleTabs
+            title={testItem.title}
+            tabsIndex={tabsIndex}
+            tabs={testItem.tabs}
+          />
+        )}
+
       </Main>
     </Container>
   );
